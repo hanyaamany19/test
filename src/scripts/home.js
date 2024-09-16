@@ -25,14 +25,13 @@ formInput.addEventListener("submit", async (e) => {
   document.body.appendChild(document.createElement("loading-overlay"));
   const title = formInput.elements.title.value;
   const body = formInput.elements.body.value;
-  // const archived = formInput.elements.archived.checked;
 
   const newNote = {
     id: +new Date(),
     title,
     body,
     createdAt: new Date().toISOString(),
-    // archived,
+    archived: formInput.elements.archived.checked,
   };
 
   try {

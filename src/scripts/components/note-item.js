@@ -9,11 +9,8 @@ class NoteItem extends HTMLElement {
     this._title = this.getAttribute("title");
     this._body = this.getAttribute("body");
     this._index = this.getAttribute("index");
-    this._archived =
-      this.getAttribute(
-        "archived",
-      ) === "true";
-      console.log(this._archived);
+    this._archived = this.getAttribute("archived");
+    console.log(this._title);
   }
   handleDelete() {
     this.dispatchEvent(

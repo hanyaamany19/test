@@ -10,7 +10,7 @@ function showAlert(error) {
     confirmButtonText: "OK",
   });
 }
-async function createNote({ title, body}) {
+async function createNote({ title, body }) {
   const options = {
     method: "POST",
     headers: {
@@ -20,6 +20,7 @@ async function createNote({ title, body}) {
   };
   try {
     const response = await fetch(`${BASE_URL}/notes`, options);
+    console.log(response);
     const responseJSON = await response.json();
     return responseJSON;
   } catch (err) {
