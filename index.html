@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Catatan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Aplikasi Catatan</h1>
+      </nav>
+    </header>
+
+    <main>
+      <section id="note-form" class="card">
+        <form id="form-input" class="card-body c-card" data-aos="fade-down">
+          <form-control
+            input-name="title"
+            label="Judul Catatan"
+            placeholder="Disney"
+            min-length="3"
+            description="Isi dengan judul catatan (min 3 karakter)"
+          ></form-control>
+          <form-control
+            input-name="body"
+            label="Deskripsi"
+            placeholder="Isi catatan di sini"
+            min-length="3"
+            description="Isi catatan disini"
+          ></form-control>
+          <button class="btn btn-primary" id="save-button">Simpan</button>
+        </form>
+      </section>
+      <!-- TODO 1 : Menampilkan Daftar Catatan -->
+      <section class="note-container" id="note-container">
+        <h2>Daftar Catatan yang dipinjam</h2>
+        <div id="note-lists"></div>
+      </section>
+    </main>
+
+    <app-footer></app-footer>
+    <!-- <script src="dist/bundle.js"></script> -->
+  </body>
+</html>
