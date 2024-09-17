@@ -33,7 +33,7 @@ formInput.addEventListener("submit", async (e) => {
     createdAt: new Date().toISOString(),
     archived: formInput.elements.archived.checked,
   };
-
+  console.log(newNote);
   try {
     await createNote(newNote);
 
@@ -100,7 +100,6 @@ async function detailNote(noteId, title, body, archived) {
         body="${body}" 
         created-at="${new Date().toISOString()}"
         archived=${archived ? "Diarsipkan" : "Tidak"} 
-        
         index="1"></note-detail>
   `,
     focusConfirm: false,

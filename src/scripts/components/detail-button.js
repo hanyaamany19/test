@@ -1,5 +1,12 @@
 class DetailButton extends HTMLElement {
-  static observedAttributes = ["id", "title", "body", "created-at","archived", "index"];
+  static observedAttributes = [
+    "id",
+    "title",
+    "body",
+    "created-at",
+    "archived",
+    "index",
+  ];
   constructor() {
     super();
 
@@ -9,7 +16,6 @@ class DetailButton extends HTMLElement {
     this._archived = this.getAttribute("archived");
     this._index = this.getAttribute("index");
     this._shadowRoot = this.attachShadow({ mode: "open" });
-    console.log(this._body);
   }
 
   connectedCallback() {
@@ -29,9 +35,10 @@ class DetailButton extends HTMLElement {
                     cursor: pointer;
                 }
             </style>
-            <button>${this._archived}</button>
+            <button>${this._archived ? "Tidak diarsip" : "Diarsip"}</button>
         `;
-        // console.log(this.observedAttributes);
+
+    console.log(this._archived);
   }
 }
 

@@ -1,6 +1,13 @@
 //  TODO 3 : Selesaikan pembuatan BookItem ini
 class NoteItem extends HTMLElement {
-  static observedAttributes = ["id", "title", "body", "created-at", "index"];
+  static observedAttributes = [
+    "id",
+    "title",
+    "body",
+    "created-at",
+    "index",
+    "archived",
+  ];
 
   constructor() {
     super();
@@ -10,7 +17,6 @@ class NoteItem extends HTMLElement {
     this._body = this.getAttribute("body");
     this._index = this.getAttribute("index");
     this._archived = this.getAttribute("archived");
-    console.log(this._title);
   }
   handleDelete() {
     this.dispatchEvent(
@@ -69,9 +75,13 @@ class NoteItem extends HTMLElement {
               </p>
                 </div>
                 <delete-button data-id=${this._id}></delete-button>
-                <detail-button data-id=${this._id}></detail-button>
-            </div>
-        `;
+                <detail-button data-id=${this._id} archived=${this._archived} 
+        
+        index="1"></detail-button>
+                
+                </div>
+                `;
+    // console.log(this._archived); 
     const deleteButton = this.querySelector("delete-button");
     const detailButton = this.querySelector("detail-button");
 

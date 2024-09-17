@@ -18,9 +18,9 @@ async function createNote({ title, body }) {
     },
     body: JSON.stringify({ title, body }),
   };
+  // console.log(archived);
   try {
     const response = await fetch(`${BASE_URL}/notes`, options);
-    console.log(response);
     const responseJSON = await response.json();
     return responseJSON;
   } catch (err) {

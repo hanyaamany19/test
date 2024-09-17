@@ -9,6 +9,7 @@ class NoteDetail extends HTMLElement {
     this._body = this.getAttribute("body");
     this._archived = this.getAttribute("archived");
     this._index = this.getAttribute("index");
+    // console.log(this._archived);
   }
 
   connectedCallback() {
